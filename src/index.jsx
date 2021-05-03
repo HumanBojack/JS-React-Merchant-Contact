@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Clients from './components/Clients';
 
 const App = () => (
-	<h1>Hello World</h1>
+	<div>
+		<h1>Hello World</h1>
+		<Clients />
+	</div>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));
