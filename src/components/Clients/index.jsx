@@ -1,6 +1,7 @@
 import React from 'react';
 import faker from 'faker';
 import Client from '../Client';
+import CardColumns from 'react-bootstrap/CardColumns';
 
 const Clients = () => {
 	const clientsList = Array.from({length: 100}, () => {
@@ -22,11 +23,11 @@ const Clients = () => {
 
 
 	return (
-		<ul>
+		<CardColumns>
 			{clientsList.map((clientData) => (
 				<Client data={clientData} key={clientData.id} />
 			))}
-		</ul>
+		</CardColumns>
 	);
 };
 

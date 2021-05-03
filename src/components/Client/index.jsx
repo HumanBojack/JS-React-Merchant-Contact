@@ -1,24 +1,23 @@
 import React from 'react';
 import faker from 'faker';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const Client = ({data}) => {
 	let { firstName, lastName, email, phone, picture, job } = data;
 
-	// id: faker.random.uuid(),
-	// 		firstName: firstName,
-	// 		lastName: lastName,
-	// 		phone: faker.phone.phoneNumber('## ## ## ## ##'),
-	// 		email: faker.internet.email(firstName, lastName).toLowerCase(),
-	// 		picture: faker.internet.avatar(),
-	// 		job: faker.name.jobTitle()
-
 	return (
-		<li>
-			{firstName} {lastName} {job}
-			<img src={picture} alt={`avatar of ${firstName} ${lastName}`} />
-			<a href={`mailto:${email}`}>{email}</a>
-			<a href={`callto:${phone}`}>{phone}</a>
-		</li>
+		<Card>
+		  <Card.Img variant="top" src={picture} />
+		  <Card.Body>
+		    <Card.Title>{firstName} {lastName}</Card.Title>
+		    <Card.Text>
+		      {job}
+		    </Card.Text>
+		    <Button variant="primary" href={`mailto:${email}`}>Email</Button>
+		    <Button variant="primary" href={`callto:${phone}`}>Phone</Button>
+		  </Card.Body>
+		</Card>
 	);
 }
 export default Client;
